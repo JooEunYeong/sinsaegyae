@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* 초기화 */
+* {box-sizing: border-box;}
+body, h1, h2, h3, p, ul { margin: 0; padding: 0;}
+ul li {list-style: none;}
+a{text-decoration: none; color: #767676;}
+address { font-style: italic;}
+.hidden{ overflow: hidden; width: 1px; height: 1px; margin: -1px; clip-path: polygon(0 0, 0 0, 0 0);}
+
+/* header */
+#header{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header h1{margin-left: 50px;}
+
+/* lnb */
+#lnb{order: 1;}
+#lnb ul{display: flex;}
+#lnb > ul > li:nth-child(2){margin: 0 30px 0 20px;}
+
+/* gnb */
+#gnb{}
+#gnb ul{display: flex;}
+#gnb ul li{margin: 0 20px;}
+
+/* banner */
+#banner{
+    width: 100%;
+    height: 53.6458vw;
+    background: url(../images//kristamonique-76979.jpg) no-repeat center top / cover;
+}
+#banner h2{
+    padding: 200px 0 0 240px; 
+    font-size: 80px; color: #fff;
+}
+#banner p{
+    padding: 30px 0 0 240px; 
+    font-size: 20px; color: #fff;
+}
+
+/* content */
+main{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    width: 1200px;
+}
+section{
+    width: 100%;
+    height: 300px;
+    background: gray;
+}
+section:not(:last-child){margin-right: 1%;}
+
+/* footer */
+footer{ height: 250px; background-color: green;}
+
+/* 1220이하 */
+@media screen and (max-width: 1220px) {
+    main {width: 100%;}
+    #banner h2{ 
+        padding: 100px 0 0 0;
+        font-size: 60px;
+    }
+    #banner p{
+        padding: 20px 0 0 0; 
+        font-size: 15px;
+    }
+
+}
+ /* 1000이하 */
+ @media screen and (max-width: 1000px){
+    main{flex-flow: wrap;}
+    section{width: 49.5%;}
+    section:not(:last-child) {margin-right: 0;}
+    section:nth-child(even){margin-right: 1%;}
+    section:nth-child(1), section:nth-child(2){ margin-bottom: 1%; }
+ }
+
+ /* 800이하 */
+ @media screen and (max-width: 800px){
+    #header h1{font-size: 20px; margin-left: 30px;}
+
+    section{width: 100%; margin: 0;}
+    section:nth-child(even){margin: 0;}
+    section:nth-child(1), section:nth-child(2){margin: 0;}
+    section:not(:last-child){ margin-bottom: 1%; }  
+    
+    #lnb > ul > li:nth-child(2){margin: 0 20px 0 10px;}
+    #lnb > ul > li a{font-size: 14px;}
+    #gnb ul li a{font-size: 14px;}
+
+    #banner h2{
+        padding: 18.51% 0 0 0; 
+        font-size: 10vw;} 
+    #banner p{
+        padding: 2.77% 0 0 0; 
+        font-size: 2.5000vw;}
+ }
